@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TweetViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var tweetButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setLayout()
+        self.setAction()
     }
 
     private func setLayout() {
@@ -38,11 +44,18 @@ class TweetViewController: UIViewController {
         self.tableView.indicatorStyle = .white
 
     }
-    @IBAction func cancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBAction func tweet(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+
+    private func setAction() {
+        // ツイートボタンのタップアクションを定義
+        self.tweetButton.rx.tap.subscribe { [unowned self] _ in
+            self.dismiss(animated: true, completion: nil)
+        }.disposed(by: self.disposeBag)
+
+        // キャンセルボタンのタップアクションを定義
+        self.cancelButton.rx.tap.subscribe { [unowned self] _ in
+            self.dismiss(animated: true, completion: nil)
+        }.disposed(by: self.disposeBag)
+        
     }
 
 }

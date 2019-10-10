@@ -33,9 +33,6 @@
                                     <constraint firstAttribute="width" secondItem="Gkj-7l-6rE" secondAttribute="height" multiplier="1:1" id="SKq-zX-ybW"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="mlE-a8-mDy" kind="presentation" id="DKt-ek-jEB"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,70 +50,13 @@
                         <barButtonItem key="rightBarButtonItem" title="★" id="fbH-5G-Wft"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="floatingButton" destination="Gkj-7l-6rE" id="ij0-Kz-X2m"/>
                         <outlet property="tableView" destination="x5j-AF-s6b" id="8cP-S8-BFu"/>
-                        <outlet property="tweetButton" destination="Gkj-7l-6rE" id="aqX-d2-HCu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2848" y="-72"/>
-        </scene>
-        <!--Tweet View Controller-->
-        <scene sceneID="fYy-h2-FBM">
-            <objects>
-                <viewController id="mlE-a8-mDy" customClass="TweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zdd-gT-2k3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-fr-Dot">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="EtJ-m2-ZTN"/>
-                                </constraints>
-                                <color key="barTintColor" red="0.090196078430000007" green="0.12549019610000001" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <items>
-                                    <navigationItem id="kpc-sd-qFp">
-                                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="ldF-cb-QtN">
-                                            <connections>
-                                                <action selector="cancel:" destination="mlE-a8-mDy" id="CjB-1D-n6Z"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="ツイート" id="LJH-VO-052">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="tweet:" destination="mlE-a8-mDy" id="MYg-X5-Zq9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8cZ-Ol-pRT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="mlE-a8-mDy" id="wcR-cm-2jb"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.090196078430000007" green="0.12549019610000001" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="ziY-fr-Dot" firstAttribute="top" secondItem="cxQ-bl-cb7" secondAttribute="top" id="FTX-Xq-kKM"/>
-                            <constraint firstAttribute="trailing" secondItem="ziY-fr-Dot" secondAttribute="trailing" id="Li1-VO-yuS"/>
-                            <constraint firstItem="ziY-fr-Dot" firstAttribute="leading" secondItem="zdd-gT-2k3" secondAttribute="leading" id="lpF-TO-wUC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="cxQ-bl-cb7"/>
-                    </view>
-                    <connections>
-                        <outlet property="navigationBar" destination="ziY-fr-Dot" id="bcK-1x-X8k"/>
-                        <outlet property="tableView" destination="8cZ-Ol-pRT" id="QDt-eY-oV2"/>
-                        <outlet property="tweetButton" destination="LJH-VO-052" id="P4j-4J-yNN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PWW-Ms-CSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3710.144927536232" y="-72.321428571428569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XPU-9p-BqW">
