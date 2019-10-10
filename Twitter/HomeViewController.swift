@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
 
     var items: [Item] = []
-    
+    let disposeBag = DisposeBag()
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var floatingButton: UIButton!
 
@@ -20,6 +23,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         self.setLayout()
+        self.setAction()
         self.createData()
     }
 
@@ -60,6 +64,15 @@ class HomeViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.showsVerticalScrollIndicator = true
         self.tableView.indicatorStyle = .white
+    }
+
+    private func setAction() {
+        // フローティングボタンタップ時のアクションを定義
+        self.floatingButton.rx.tap.subscribe { [unowned self] _ in
+            let storyboard = UIStoryboard(name: "TweetViewController", bundle: nil)
+            let tweetViewController = storyboard.instantiateViewController(withIdentifier: "TweetViewController") as! TweetViewController
+            self.present(tweetViewController, animated: true, completion: nil)
+        }.disposed(by: self.disposeBag)
     }
 
     // TODO: サイドメニューを表示させる
