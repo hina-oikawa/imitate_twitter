@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     var items: [Item] = []
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tweetButton: UIButton!
+    @IBOutlet weak var floatingButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
         iconLeftBarButton.customView?.smailCircle()
         self.navigationItem.leftBarButtonItem = iconLeftBarButton
 
-        self.tweetButton.circle()
+        self.floatingButton.circle()
 
         // カスタムセルの登録
         self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")

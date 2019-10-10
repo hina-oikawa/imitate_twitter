@@ -53,8 +53,8 @@
                         <barButtonItem key="rightBarButtonItem" title="★" id="fbH-5G-Wft"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="floatingButton" destination="Gkj-7l-6rE" id="ij0-Kz-X2m"/>
                         <outlet property="tableView" destination="x5j-AF-s6b" id="8cP-S8-BFu"/>
-                        <outlet property="tweetButton" destination="Gkj-7l-6rE" id="aqX-d2-HCu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
