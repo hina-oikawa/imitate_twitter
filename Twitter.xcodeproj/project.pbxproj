@@ -96,7 +96,7 @@
 		CA34B397234C0D3000CE7484 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
-				CA34B3C3234DC28800CE7484 /* Custom */,
+				CA34B3C3234DC28800CE7484 /* Views */,
 				CA34B3AE234C1D6300CE7484 /* Common */,
 				CA34B398234C0D3000CE7484 /* AppDelegate.swift */,
 				CA34B39A234C0D3000CE7484 /* HomeViewController.swift */,
@@ -131,12 +131,14 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		CA34B3C3234DC28800CE7484 /* Custom */ = {
+		CA34B3C3234DC28800CE7484 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CA34B3B1234C2AF200CE7484 /* TableViewCell */,
+				CAD86ADA2350702600448A9F /* SideMenuViewController.swift */,
+				CAD86ADE2350704800448A9F /* SideMenuViewController.storyboard */,
 			);
-			path = Custom;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
