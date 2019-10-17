@@ -8,4 +8,5 @@ target 'Twitter' do
   # Pods for Twitter
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'SideMenu', '~> 6.0.0'
 end

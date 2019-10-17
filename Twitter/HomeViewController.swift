@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SideMenu
 
 class HomeViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var floatingButton: UIButton!
+    var iconLeftBarButton = UIBarButtonItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,7 @@ class HomeViewController: UIViewController {
         iconButton.setImage(UIImage(named:"hina.jpeg")!.withRenderingMode(.alwaysOriginal), for: .normal)
         iconButton.addTarget(self, action: #selector(hoge), for: .touchUpInside)
 
-        let iconLeftBarButton = UIBarButtonItem(customView: iconButton)
+        self.iconLeftBarButton = UIBarButtonItem(customView: iconButton)
         let currWidth = iconLeftBarButton.customView?.widthAnchor.constraint(equalToConstant: 30)
         currWidth?.isActive = true
         let currHeight = iconLeftBarButton.customView?.heightAnchor.constraint(equalToConstant: 30)
@@ -75,22 +77,11 @@ class HomeViewController: UIViewController {
         }.disposed(by: self.disposeBag)
     }
 
-    // TODO: サイドメニューを表示させる
+    // TODO: サイドメニューを表示させる(いずれはRxにしたい)
     @objc func hoge() {
-        print("hoge")
-    }
-
-    private func createData() {
-        self.items = [
-            Item(userName: "Kon_pippiana", userId: "@Kon_741113", tweet: "疲れたあああああああああああああああああああああああああああああああああああああああああああああああ", image: "hina.jpeg"),
-            Item(userName: "NON STYLE 石田彰", userId: "@gakuishida", tweet: "井上マジ無理", image: "ishida.jpeg"),
-            Item(userName: "マクドナルド", userId: "McDonaldsJapan", tweet: "チキンクリスプ", image: "mc.jpeg"),
-            Item(userName: "Kon_pippiana", userId: "@Kon_741113", tweet: "疲れた", image: "hina.jpeg"),
-            Item(userName: "NON STYLE 石田彰", userId: "@gakuishida", tweet: "井上マジ無理", image: "ishida.jpeg"),
-            Item(userName: "マクドナルド", userId: "McDonaldsJapan", tweet: "チキンクリスプ", image: "mc.jpeg"),
-            Item(userName: "Kon_pippiana", userId: "@Kon_741113", tweet: "疲れた", image: "hina.jpeg"),
-            Item(userName: "NON STYLE 石田彰", userId: "@gakuishida", tweet: "井上マジ無理", image: "ishida.jpeg"),
-            Item(userName: "マクドナルド", userId: "McDonaldsJapan", tweet: "チキンクリスプ", image: "mc.jpeg")]
+        let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "navigation") as! UISideMenuNavigationController
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
@@ -113,4 +104,20 @@ extension HomeViewController: UITableViewDataSource {
         return UITableViewCell()
     }
 
+}
+
+// TODO: 邪魔なので一番下に移動(いずれは削除する)
+extension HomeViewController {
+    private func createData() {
+        self.items = [
+            Item(userName: "Kon_pippiana", userId: "@Kon_741113", tweet: "疲れたあああああああああああああああああああああああああああああああああああああああああああああああ", image: "hina.jpeg"),
+            Item(userName: "NON STYLE 石田彰", userId: "@gakuishida", tweet: "井上マジ無理", image: "ishida.jpeg"),
+            Item(userName: "マクドナルド", userId: "McDonaldsJapan", tweet: "チキンクリスプ", image: "mc.jpeg"),
+            Item(userName: "Kon_pippiana", userId: "@Kon_741113", tweet: "疲れた", image: "hina.jpeg"),
+            Item(userName: "NON STYLE 石田彰", userId: "@gakuishida", tweet: "井上マジ無理", image: "ishida.jpeg"),
+            Item(userName: "マクドナルド", userId: "McDonaldsJapan", tweet: "チキンクリスプ", image: "mc.jpeg"),
+            Item(userName: "Kon_pippiana", userId: "@Kon_741113", tweet: "疲れた", image: "hina.jpeg"),
+            Item(userName: "NON STYLE 石田彰", userId: "@gakuishida", tweet: "井上マジ無理", image: "ishida.jpeg"),
+            Item(userName: "マクドナルド", userId: "McDonaldsJapan", tweet: "チキンクリスプ", image: "mc.jpeg")]
+    }
 }
