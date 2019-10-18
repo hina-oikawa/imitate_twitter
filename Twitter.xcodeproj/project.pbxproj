@@ -26,6 +26,8 @@
 		CAD86ADF2350704800448A9F /* SideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD86ADE2350704800448A9F /* SideMenuViewController.storyboard */; };
 		CAD86AE22358255A00448A9F /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD86AE02358255A00448A9F /* SideMenuTableViewCell.swift */; };
 		CAD86AE32358255A00448A9F /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD86AE12358255A00448A9F /* SideMenuTableViewCell.xib */; };
+		CAD86AE5235992CF00448A9F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD86AE4235992CF00448A9F /* CameraViewController.swift */; };
+		CAD86AE7235992E100448A9F /* CameraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD86AE6235992E100448A9F /* CameraViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		CAD86ADE2350704800448A9F /* SideMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuViewController.storyboard; sourceTree = "<group>"; };
 		CAD86AE02358255A00448A9F /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		CAD86AE12358255A00448A9F /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		CAD86AE4235992CF00448A9F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		CAD86AE6235992E100448A9F /* CameraViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraViewController.storyboard; sourceTree = "<group>"; };
 		EAEF8ED3AE2ACE64EC2989F2 /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,8 @@
 				CA34B3B1234C2AF200CE7484 /* TableViewCell */,
 				CAD86ADA2350702600448A9F /* SideMenuViewController.swift */,
 				CAD86ADE2350704800448A9F /* SideMenuViewController.storyboard */,
+				CAD86AE4235992CF00448A9F /* CameraViewController.swift */,
+				CAD86AE6235992E100448A9F /* CameraViewController.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD86AE7235992E100448A9F /* CameraViewController.storyboard in Resources */,
 				CAD86ADF2350704800448A9F /* SideMenuViewController.storyboard in Resources */,
 				CA34B3C2234DB2D900CE7484 /* TweetTableViewCell.xib in Resources */,
 				CA546401234F266A0004FFC1 /* TweetViewController.storyboard in Resources */,
@@ -271,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD86AE5235992CF00448A9F /* CameraViewController.swift in Sources */,
 				CA34B39B234C0D3000CE7484 /* HomeViewController.swift in Sources */,
 				CA34B3B6234C2B2A00CE7484 /* HomeTableViewCell.swift in Sources */,
 				CA34B3B0234C1D7C00CE7484 /* UIColor.swift in Sources */,
