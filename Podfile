@@ -9,4 +9,5 @@ target 'Twitter' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'SideMenu', '~> 6.0.0'
+    pod 'JJFloatingActionButton'
 end
