@@ -7,20 +7,25 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SideMenuViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var iconImageView: UIButton!
-
+    @IBOutlet weak var cameraButton: UIButton!
+    
     var imageNames: [String] = ["profile.png", "list.png", "bookmark.png", "moment.png", "request.png"]
     var detailNames: [String] = ["プロフィール", "リスト", "ブックマーク", "モーメント", "フォローリクエスト"]
     var otherNames: [String] = ["設定とプライバシー", "ヘルプセンター"]
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setLayout()
+        self.setAction()
     }
 
     private func setLayout() {
@@ -39,6 +44,15 @@ class SideMenuViewController: UIViewController {
         self.tableView.showsVerticalScrollIndicator = true
         self.tableView.indicatorStyle = .white
 
+    }
+
+    private func setAction() {
+        // フローティングボタンタップ時のアクションを定義
+        self.cameraButton.rx.tap.subscribe { [weak self] _ in
+            let storyboard = UIStoryboard(name: "CameraViewController", bundle: nil)
+            let cameraViewController = storyboard.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
+            self?.present(cameraViewController, animated: true, completion: nil)
+            }.disposed(by: self.disposeBag)
     }
 
 }

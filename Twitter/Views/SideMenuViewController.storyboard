@@ -121,6 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GGZ-5a-CBF"/>
                     <connections>
+                        <outlet property="cameraButton" destination="eFA-0s-tNO" id="SUC-Ow-dFb"/>
                         <outlet property="iconImageView" destination="29w-sC-CPt" id="Jpe-rF-yot"/>
                         <outlet property="tableView" destination="UqJ-pi-hv8" id="BsS-74-Kes"/>
                     </connections>
