@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SideMenu
+import JJFloatingActionButton
 
 class HomeViewController: UIViewController {
 
@@ -27,6 +28,26 @@ class HomeViewController: UIViewController {
         self.setLayout()
         self.setAction()
         self.createData()
+
+        // TODO:
+        let actionButton = JJFloatingActionButton()
+
+        actionButton.addItem(title: "item 1", image: UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+        }
+
+        actionButton.addItem(title: "item 2", image: UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+        }
+
+        actionButton.addItem(title: "item 3", image: nil) { item in
+            // do something
+        }
+
+        view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
     }
 
     private func setLayout() {
