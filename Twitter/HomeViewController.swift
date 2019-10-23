@@ -75,11 +75,11 @@ class HomeViewController: UIViewController {
         }
 
         actionButton.addItem(title: "item 2", image: UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate)) { item in
-            // do something
+            self.presentImagePickerController(type: "image")
         }
 
         actionButton.addItem(title: "item 3", image: nil) { item in
-            // do something
+            self.presentImagePickerController(type: "movie")
         }
 
         view.addSubview(actionButton)
@@ -93,6 +93,12 @@ class HomeViewController: UIViewController {
         let storyboard = UIStoryboard(name: "TweetViewController", bundle: nil)
         let tweetViewController = storyboard.instantiateViewController(withIdentifier: "TweetViewController") as! TweetViewController
         self.present(tweetViewController, animated: true, completion: nil)
+    }
+
+    private func presentImagePickerController(type: String) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.mediaTypes = ["public." + type]
+        self.present(imagePickerController, animated: true)
     }
 
     // TODO: サイドメニューを表示させる(いずれはRxにしたい)

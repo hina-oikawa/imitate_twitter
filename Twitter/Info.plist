@@ -47,5 +47,7 @@
 	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string>カメラを利用しますか？</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>カメラロールを利用しますか？</string>
 </dict>
 </plist>
