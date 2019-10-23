@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var floatingButton: UIButton!
     var iconLeftBarButton = UIBarButtonItem()
 
     override func viewDidLoad() {
@@ -76,8 +75,6 @@ class HomeViewController: UIViewController {
         currHeight?.isActive = true
         iconLeftBarButton.customView?.smailCircle()
         self.navigationItem.leftBarButtonItem = iconLeftBarButton
-
-        self.floatingButton.circle()
 
         // カスタムセルの登録
         self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
