@@ -25,22 +25,11 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="x55-cY-vBW"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkj-7l-6rE">
-                                <rect key="frame" x="348" y="747" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="58f-GP-p3x"/>
-                                    <constraint firstAttribute="width" secondItem="Gkj-7l-6rE" secondAttribute="height" multiplier="1:1" id="SKq-zX-ybW"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="x5j-AF-s6b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hfv-Wd-XN4"/>
                             <constraint firstAttribute="trailing" secondItem="x5j-AF-s6b" secondAttribute="trailing" id="Osr-Qy-DGJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gkj-7l-6rE" secondAttribute="trailing" constant="16" id="Va6-YN-eAk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gkj-7l-6rE" secondAttribute="bottom" constant="16" id="n08-6h-pjK"/>
                             <constraint firstItem="x5j-AF-s6b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qQl-He-T3h"/>
                             <constraint firstItem="x5j-AF-s6b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wnf-XG-tKO"/>
                         </constraints>
@@ -50,7 +39,6 @@
                         <barButtonItem key="rightBarButtonItem" title="★" id="fbH-5G-Wft"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="floatingButton" destination="Gkj-7l-6rE" id="ij0-Kz-X2m"/>
                         <outlet property="tableView" destination="x5j-AF-s6b" id="8cP-S8-BFu"/>
                     </connections>
                 </viewController>

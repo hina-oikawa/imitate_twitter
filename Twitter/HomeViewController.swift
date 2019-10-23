@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SideMenu
+import JJFloatingActionButton
 
 class HomeViewController: UIViewController {
 
@@ -17,7 +18,6 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var floatingButton: UIButton!
     var iconLeftBarButton = UIBarButtonItem()
 
     override func viewDidLoad() {
@@ -25,8 +25,9 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         self.setLayout()
-        self.setAction()
         self.createData()
+        self.setFloatingActionButtons()
+
     }
 
     private func setLayout() {
@@ -56,8 +57,6 @@ class HomeViewController: UIViewController {
         iconLeftBarButton.customView?.smailCircle()
         self.navigationItem.leftBarButtonItem = iconLeftBarButton
 
-        self.floatingButton.circle()
-
         // カスタムセルの登録
         self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         // セルの高さを指定(値はなんでもよい)
@@ -68,13 +67,32 @@ class HomeViewController: UIViewController {
         self.tableView.indicatorStyle = .white
     }
 
-    private func setAction() {
-        // フローティングボタンタップ時のアクションを定義
-        self.floatingButton.rx.tap.subscribe { [unowned self] _ in
-            let storyboard = UIStoryboard(name: "TweetViewController", bundle: nil)
-            let tweetViewController = storyboard.instantiateViewController(withIdentifier: "TweetViewController") as! TweetViewController
-            self.present(tweetViewController, animated: true, completion: nil)
-        }.disposed(by: self.disposeBag)
+    private func setFloatingActionButtons() {
+        let actionButton = JJFloatingActionButton()
+
+        actionButton.addItem(title: "Tweet", image: UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate)) { item in
+            self.presentTweetViewController()
+        }
+
+        actionButton.addItem(title: "item 2", image: UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+        }
+
+        actionButton.addItem(title: "item 3", image: nil) { item in
+            // do something
+        }
+
+        view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+
+    }
+
+    private func presentTweetViewController() {
+        let storyboard = UIStoryboard(name: "TweetViewController", bundle: nil)
+        let tweetViewController = storyboard.instantiateViewController(withIdentifier: "TweetViewController") as! TweetViewController
+        self.present(tweetViewController, animated: true, completion: nil)
     }
 
     // TODO: サイドメニューを表示させる(いずれはRxにしたい)
