@@ -10,21 +10,42 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        self.logoImageView.tintColor = .white
     }
-    
 
-    /*
-    // MARK: - Navigation
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        UIView.animate(withDuration: 0.5,
+                       delay: 1.0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.logoImageView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+
+        }, completion: nil)
+
+        UIView.animate(withDuration: 2.0,
+                       delay: 1.5,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.logoImageView.transform = CGAffineTransform(scaleX: 100, y: 100)
+                        self.view.backgroundColor = UIColor(hex: "17202A")
+                        self.logoImageView.alpha = 0
+
+        },
+                       completion: { _ in
+                        let sb = UIStoryboard(name: "Main", bundle: nil)
+                        guard let vc = sb.instantiateInitialViewController() else { return }
+                        vc.modalTransitionStyle = .crossDissolve
+                        self.present(vc, animated: true, completion: nil)
+        })
+
     }
-    */
-
 }
