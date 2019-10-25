@@ -22,6 +22,8 @@
 		CA34B3C1234DB2D900CE7484 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34B3BF234DB2D900CE7484 /* TweetTableViewCell.swift */; };
 		CA34B3C2234DB2D900CE7484 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA34B3C0234DB2D900CE7484 /* TweetTableViewCell.xib */; };
 		CA546401234F266A0004FFC1 /* TweetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA546400234F266A0004FFC1 /* TweetViewController.storyboard */; };
+		CAD8391F2362EE6D007003F8 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD8391E2362EE6D007003F8 /* SplashViewController.storyboard */; };
+		CAD839212362EE81007003F8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD839202362EE81007003F8 /* SplashViewController.swift */; };
 		CAD86ADC2350702600448A9F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD86ADA2350702600448A9F /* SideMenuViewController.swift */; };
 		CAD86ADF2350704800448A9F /* SideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD86ADE2350704800448A9F /* SideMenuViewController.storyboard */; };
 		CAD86AE22358255A00448A9F /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD86AE02358255A00448A9F /* SideMenuTableViewCell.swift */; };
@@ -49,6 +51,8 @@
 		CA34B3BF234DB2D900CE7484 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		CA34B3C0234DB2D900CE7484 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		CA546400234F266A0004FFC1 /* TweetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TweetViewController.storyboard; sourceTree = "<group>"; };
+		CAD8391E2362EE6D007003F8 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
+		CAD839202362EE81007003F8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		CAD86ADA2350702600448A9F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		CAD86ADE2350704800448A9F /* SideMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuViewController.storyboard; sourceTree = "<group>"; };
 		CAD86AE02358255A00448A9F /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				CA34B3AC234C191300CE7484 /* Item.swift */,
 				CA34B3BD234DA12900CE7484 /* TweetViewController.swift */,
 				CA546400234F266A0004FFC1 /* TweetViewController.storyboard */,
+				CAD8391E2362EE6D007003F8 /* SplashViewController.storyboard */,
+				CAD839202362EE81007003F8 /* SplashViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 				CAD86ADF2350704800448A9F /* SideMenuViewController.storyboard in Resources */,
 				CA34B3C2234DB2D900CE7484 /* TweetTableViewCell.xib in Resources */,
 				CA546401234F266A0004FFC1 /* TweetViewController.storyboard in Resources */,
+				CAD8391F2362EE6D007003F8 /* SplashViewController.storyboard in Resources */,
 				CA34B3A3234C0D3200CE7484 /* LaunchScreen.storyboard in Resources */,
 				CA34B3A0234C0D3200CE7484 /* Assets.xcassets in Resources */,
 				CA34B3B7234C2B2A00CE7484 /* HomeTableViewCell.xib in Resources */,
@@ -281,6 +288,7 @@
 				CAD86AE5235992CF00448A9F /* CameraViewController.swift in Sources */,
 				CA34B39B234C0D3000CE7484 /* HomeViewController.swift in Sources */,
 				CA34B3B6234C2B2A00CE7484 /* HomeTableViewCell.swift in Sources */,
+				CAD839212362EE81007003F8 /* SplashViewController.swift in Sources */,
 				CA34B3B0234C1D7C00CE7484 /* UIColor.swift in Sources */,
 				CA34B3AD234C191300CE7484 /* Item.swift in Sources */,
 				CA34B3BE234DA12900CE7484 /* TweetViewController.swift in Sources */,
