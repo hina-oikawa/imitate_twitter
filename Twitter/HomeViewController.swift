@@ -17,8 +17,6 @@ class HomeViewController: UIViewController {
     var items: [Item] = []
     let disposeBag = DisposeBag()
 
-    @IBOutlet weak var splashView: UIView!
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var iconLeftBarButton = UIBarButtonItem()
 
@@ -29,38 +27,6 @@ class HomeViewController: UIViewController {
         self.setLayout()
         self.createData()
         self.setFloatingActionButtons()
-
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        // TODO:
-        if self.logoImageView != nil {
-
-            UIView.animate(withDuration: 0.5,
-                           delay: 1.0,
-                           options: .curveEaseOut,
-                           animations: {
-                            self.logoImageView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-
-            }, completion: nil)
-
-            UIView.animate(withDuration: 2.0,
-                           delay: 1.5,
-                           options: .curveEaseOut,
-                           animations: {
-                            self.logoImageView.transform = CGAffineTransform(scaleX: 100, y: 100)
-                            self.logoImageView.alpha = 0
-                            self.splashView.alpha = 0
-                            self.navigationController?.setNavigationBarHidden(false, animated: false)
-
-            },
-                           completion: { _ in
-                            self.logoImageView.removeFromSuperview()
-                            self.splashView.removeFromSuperview()
-            })
-        }
 
     }
 
@@ -91,9 +57,6 @@ class HomeViewController: UIViewController {
         iconLeftBarButton.customView?.smailCircle()
         self.navigationItem.leftBarButtonItem = iconLeftBarButton
 
-        // Splashアニメーションのため、navigationBarとtabBarを非表示にする
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.navigationBar.alpha = 0
         // カスタムセルの登録
         self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         // セルの高さを指定(値はなんでもよい)
